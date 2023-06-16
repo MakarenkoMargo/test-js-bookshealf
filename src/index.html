@@ -2,33 +2,238 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework 8</title>
-    <link rel="stylesheet" href="css/common.css" />
+    <title>Page title</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <script type="module" src="./index.js"></script>
   </head>
   <body>
-    <div class="modal">
-      <h2>Test-modal</h2>
-      <div class="book-card">
-        <div class="book-card-tumb">
-          <img
-            src="https://ru.wiktionary.org/wiki/%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA#/media/%D0%A4%D0%B0%D0%B9%D0%BB:1.1_Harris_House.png"
-            alt="book-cover"
-          />
+    <header>
+      <include src="./partials/common/header.html"></include>
+    </header>
+    <main>
+      <!-- Секція Сергія -->
+      <div class="category">
+        <ul class="category__list">
+          <li>
+            <button
+              class="category__list--button"
+              type="button"
+              id="allCategoryBtn"
+              name="All categories"
+            >
+              All categories
+            </button>
+          </li>
+          <li>
+            <button
+              class="category__list--button"
+              type="button"
+              name="Combined Print and E-Book Fiction"
+            >
+              Combined Print and E-book Fiction
+            </button>
+          </li>
+          <li>
+            <button
+              class="category__list--button"
+              type="button"
+              name="Combined Print and E-Book Nonfiction"
+            >
+              Combined Print & E-book Nonfiction
+            </button>
+          </li>
+          <li>
+            <button
+              class="category__list--button"
+              type="button"
+              name="Hardcover Fiction"
+            >
+              Hardcover fiction
+            </button>
+          </li>
+          <li>
+            <button
+              class="category__list--button"
+              type="button"
+              name="Hardcover Nonfiction"
+            >
+              Hardcover nonfiction
+            </button>
+          </li>
+          <li>
+            <button
+              class="category__list--button"
+              type="button"
+              name="Trade Fiction Paperback"
+            >
+              Paperback trade fiction
+            </button>
+          </li>
+          <li>
+            <button
+              class="category__list--button"
+              type="button"
+              name="Paperback Nonfiction"
+            >
+              Paperback nonfiction
+            </button>
+          </li>
+          <li>
+            <button
+              class="category__list--button"
+              type="button"
+              name="Advice How-To and Miscellaneous"
+            >
+              Advice, how-to & Miscellaneous
+            </button>
+          </li>
+          <li>
+            <button
+              class="category__list--button"
+              type="button"
+              name="Childrens Middle Grade Hardcover"
+            >
+              Children’s middle grade hardcover
+            </button>
+          </li>
+          <li>
+            <button
+              class="category__list--button"
+              type="button"
+              name="Series Books"
+            >
+              Series Books
+            </button>
+          </li>
+          <li>
+            <button
+              class="category__list--button"
+              type="button"
+              name="Picture Books"
+            >
+              Picture Books
+            </button>
+          </li>
+          <li>
+            <button
+              class="category__list--button"
+              type="button"
+              name="Young Adult Hardcover"
+            >
+              Young Adult Hardcover
+            </button>
+          </li>
+          <li>
+            <button
+              class="category__list--button"
+              type="button"
+              name="Business Books"
+            >
+              Business Books
+            </button>
+          </li>
+          <li>
+            <button
+              class="category__list--button"
+              type="button"
+              name="Mass Market Monthly"
+            >
+              Mass Market Monthly
+            </button>
+          </li>
+          <li>
+            <button
+              class="category__list--button"
+              type="button"
+              name="Middle Grade Paperback Monthly"
+            >
+              Middle Grade Paperback Monthly
+            </button>
+          </li>
+          <li>
+            <button
+              class="category__list--button"
+              type="button"
+              name="Audio Nonfiction"
+            >
+              Audio Nonfiction
+            </button>
+          </li>
+          <li>
+            <button
+              class="category__list--button"
+              type="button"
+              name="Audio Fiction"
+            >
+              Audio Fiction
+            </button>
+          </li>
+          <li>
+            <button
+              class="category__list--button"
+              type="button"
+              name="Graphic Books and Manga"
+            >
+              Graphic Books and Manga
+            </button>
+          </li>
+          <li>
+            <button
+              class="category__list--button"
+              type="button"
+              name="Young Adult Paperback Monthly"
+            >
+              Young Adult Paperback Monthly
+            </button>
+          </li>
+        </ul>
+      </div>
+      <!-- Секція Світлани -->
+      <section class="category-some">
+        <div id="all-categories">
+          <h2 class="all-books-title">
+            Best Seller <span class="highlight">Books</span>
+          </h2>
+          <ul class="categorie-list"></ul>
         </div>
-        <div class="modal-book-card-content">
-          <h2></h2>
-          <h3></h3>
-          <p></p>
-          <div class="book-card-links">
-            <a href="">Amazon</a>
-            <a href="">Apple</a>
-            <a href="">Author</a>
+        <div id="sorted-categories">
+          <h2 class="category-title"></h2>
+          <ul class="category__books">
+            <!-- Тут будуть додаватися книги -->
+          </ul>
+        </div>
+      </section>
+    </main>
+    <div class="js-backdrop-modal is-hidden">
+      <div class="modal is-hidden about-book-modal">
+        <button
+          id="modal-close"
+          class="close-modal-btn"
+          type="button"
+          aria-label="close"
+        >
+          <svg class="button--close-icon" width="28" height="28">
+            <use href="./images/symbol-defs.svg#close-btn-icon"></use>
+          </svg>
+        </button>
+        <div id="allModal"></div>
+        <div class="storage-button-wrapper">
+          <button type="button" class="add-storage-button modal-id-buttons">
+            Add to shopping list
+          </button>
+
+          <div class="remove-modal-btn">
+            <button
+              type="button"
+              class="storage-delete-button modal-id-buttons"
+            >
+              Remove from the shopping list
+            </button>
+            <p class="storage-description"></p>
           </div>
         </div>
       </div>
     </div>
-    <script src="js/card-book.js" type="module"></script>
   </body>
 </html>

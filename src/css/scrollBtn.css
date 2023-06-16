@@ -1,0 +1,24 @@
+.scrollBtn {
+    position: fixed;
+    top: 80%;
+    left: 80%;
+    width: 54px;
+    height: 54px;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 50%;
+    color: var(--ligtht-theme);
+    border-color:  rgba(255, 255, 255, 0.3);
+    background-color: var(--color-blue-component);
+}
+
+.scrollBtn.scrollBtn-hide {
+    display: none;
+}
+
+@media screen and (min-width: 1440px) {
+    .scrollBtn {
+        left: 90%;
+        top: 90%;
+    }
+}

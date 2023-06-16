@@ -1,0 +1,59 @@
+.book-card {
+    width: 335px;
+    border: 1px solid green;
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+.book-category {
+    color: #B4AFAF;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: calc(18 / 14);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    letter-spacing: 0.03em;
+}
+
+.book-cover {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+
+.book-name {
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    font-size: 16px;
+    line-height: calc(18 / 16);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+
+.book-author {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: calc(14px/12px);
+    color: #B4AFAF;
+    letter-spacing: -0.04em;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.book-card-btn {
+    padding: 14px 28px;
+    border: 2px solid var(--color-blue-component);
+    border-radius: 40px;
+    margin-left: auto;
+    text-transform: uppercase;
+    background-color: transparent;
+    display: block;
+}
+
+.collection-title {
+    font-size: 32px;
+    line-height: calc(38 / 32);
+    letter-spacing: -0.04em;
+    margin-bottom: 40px;
+    color: var(----dark-theme-componemt);
+}
