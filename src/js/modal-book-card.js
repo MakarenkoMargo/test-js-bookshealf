@@ -1,4 +1,6 @@
-import fetchBookInfo from './API-service';
+import { APIService } from './API-service';
+
+const apiBook = new APIService();
 
 // імпорт іконок для верстки картки книги в модальному вікні
 import amazonPng from '../images/png-icons-shops/amazon-icon1x.png';
@@ -26,7 +28,7 @@ let storageObj = {};
 addStorageBtn.addEventListener('click', onStorageAdd);
 removeStorageBtn.addEventListener('click', onStorageDelete);
 bookList.addEventListener('click', onIdClick);
-categorieList.addEventListener('click', onIdClick);
+// categorieList.addEventListener('click', onIdClick);
 
 function onIdClick(e) {
   if (
@@ -57,10 +59,11 @@ async function createModal(bookId) {
 async function fetchBookById(bookId) {
   try {
     storageObj = {};
-    const response = await fetch(
-      `https://books-backend.p.goit.global/books/${bookId}`
-    );
-    const data = await response.json();
+    // const response = await fetch(
+    //   `https://books-backend.p.goit.global/books/${bookId}`
+    // );
+    const response = await apiBook.fetchBookInfo(bookId);
+    const data = response.data;
     storageObj = {
       book_image: data.book_image,
       title: data.title,
@@ -178,40 +181,13 @@ function onStorageDelete() {
   storageCheck();
 }
 // const modal = document.querySelector('.modal');
-const registerModal = document.querySelector('.register-modal');
-const loginModal = document.querySelector('.login-modal');
+
 const idModal = document.querySelector('.about-book-modal');
-const closeModalBtn = document.querySelector('#modal-close');
-const fireBaseBackdrop = document.querySelector('.fire-base-backdrop');
+
 const idBackdropModal = document.querySelector('.js-backdrop-modal');
 // const allModal = document.querySelector('allModal')
 
 function openModalId() {
   idModal.classList.remove('is-hidden');
   idBackdropModal.classList.remove('is-hidden');
-}
-
-function closeModalId() {
-  idModal.classList.add('is-hidden');
-  idBackdropModal.classList.add('is-hidden');
-  // allModal.innerHTML = ''
-}
-
-function openModalRegister() {
-  registerModal.classList.remove('is-hidden');
-  fireBaseBackdrop.classList.remove('is-hidden');
-}
-
-function closeModalRegister() {
-  registerModal.classList.add('is-hidden');
-  fireBaseBackdrop.classList.add('is-hidden');
-}
-function openModalLogin() {
-  loginModal.classList.remove('is-hidden');
-  fireBaseBackdrop.classList.remove('is-hidden');
-}
-
-function closeModalLogin() {
-  loginModal.classList.add('is-hidden');
-  fireBaseBackdrop.classList.add('is-hidden');
 }
